@@ -2,3 +2,4 @@ Kaho-Chan Bot.py
 .idea/
 cogs/__pycache__/
 clients/__pycache__/
+.env
