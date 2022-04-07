@@ -1,0 +1,24 @@
+Author: Zero
+**Dilithero Adv+ Guide**
+:large_orange_diamond: **Boss Name**
+     :small_red_triangle_down: Dilithero (Water)             :small_red_triangle_down: Falma (Water)             :small_red_triangle_down: Egg (None)
+
+:large_orange_diamond: **Stats**
+     :diamond_shape_with_a_dot_inside: Tank:
+        :small_red_triangle_down: Hp= 20k+   Def= 8k+    Water Def= 500+
+     :diamond_shape_with_a_dot_inside: Everyone:
+        :small_red_triangle_down: Hp= 15k+    Def= 4k+    Water Def= 400+
+
+:large_orange_diamond: **Skill Decks and Required Roles**
+     :diamond_shape_with_a_dot_inside: Divine Knight - *Tank*
+        :small_red_triangle_down: Defense Stance, Protection, Torus Guard, Quick Step, Forefront, Aegis
+     :diamond_shape_with_a_dot_inside: Shaman - *Debuffer*
+        :small_red_triangle_down: Thorn of Misery, Dark Fog, Spirit Breath, Road to Silence, Dazzling Vortex, Moonless Dawn
+     :diamond_shape_with_a_dot_inside: Saint - *Healer and Debuffer*
+        :small_red_triangle_down: Psyche, Radiance Cross, Wall, Veil, Quick Step, Testament
+     :diamond_shape_with_a_dot_inside: Initiator - *Buffer and Debuffer*
+        :small_red_triangle_down:Assign, CRT Discharge, Conversion, Demolition, Optimize,  Smog Ball
+     :diamond_shape_with_a_dot_inside: DPS - *Damage Dealers*
+        :small_red_triangle_down: Buffs + All soil attacks (AoE can be used)
+     :diamond_shape_with_a_dot_inside: Yome Initiator - *Buffer and Debuffer*
+        :small_red_triangle_down: Assign,  CRT Discharge, Optimize, Quick Step, Smog Ball, Sprinkler

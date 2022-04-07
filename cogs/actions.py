@@ -31,8 +31,7 @@ class Actions(discord.ext.commands.Cog, name='Actions'):
         ],
 
         'kill': [
-            'https://data.yuibot.app/reactions/poke/ansiodjas.gif',
-            'https://data.yuibot.app/reactions/poke/jsidoajd.gif'
+            'https://imgur.com/jngyAfB.gif'
         ],
 
         'kiss': [
@@ -60,6 +59,12 @@ class Actions(discord.ext.commands.Cog, name='Actions'):
 
         ],
 
+        'punch': [
+            'https://data.yuibot.app/reactions/poke/ansiodjas.gif',
+            'https://data.yuibot.app/reactions/poke/jsidoajd.gif'
+
+        ],
+
         'slap': [
             'https://data.yuibot.app/reactions/poke/ansiodjas.gif',
             'https://data.yuibot.app/reactions/poke/jsidoajd.gif'
@@ -81,16 +86,10 @@ class Actions(discord.ext.commands.Cog, name='Actions'):
         ]
     }
 
-    aliases_ = "bite bonk cuddle hug kill kiss lick nom pat poke slap spank stare tickle".split(" ")
+    aliases_ = "bite bonk cuddle hug kill kiss lick nom pat poke punch slap spank stare tickle".split(" ")
 
     @discord.ext.commands.command(name="_actions_", aliases=aliases_)
     async def _actions_(self, ctx, member: discord.Member):
-        message = ctx.message.content
-        for i in self.aliases_:
-            if i in message:
-                message = i
-                break
-
         titles = {
             'bite': f'{ctx.author.name} is biting {member.name}! Hope the teeth are alright!',
 
@@ -102,7 +101,7 @@ class Actions(discord.ext.commands.Cog, name='Actions'):
 
             'kill': f'{ctx.author.name} killed {member.name}! No Mercy!',
 
-            'kiss': f'{ctx.author.name} kissed {member.name}! Mmwhhmm',
+            'kiss': f'{ctx.author.name} kissed {member.name}! Go get a room, you lovebirds!',
 
             'lick': f'{ctx.author.name} licked {member.name}! Make sure to take a bath later',
 
@@ -111,6 +110,8 @@ class Actions(discord.ext.commands.Cog, name='Actions'):
             'pat': f'{ctx.author.name} pats {member.name}! There,there',
 
             'poke': f'{ctx.author.name} wants {member.name}\'s attention!',
+
+            'punch': f'{ctx.author.name} punched {member.name}! That must have hurt',
 
             'slap': f'{ctx.author.name} slapped {member.name}! You deserved it maybe?',
 
@@ -121,30 +122,21 @@ class Actions(discord.ext.commands.Cog, name='Actions'):
             'tickle': f'{ctx.author.name} tickled {member.name}! Seems fun'
         }
 
-        embed = discord.Embed(title=f"{titles[message]}",
-                              color=ctx.guild.me.color)
-        rand_link = random.choice(self.images[message])
-        embed.set_image(url=rand_link)
-        await ctx.send(embed=embed)
+        if member.name == ctx.guild.me.name:
+            embed = discord.Embed(title=f"{ctx.me.name} bonked {ctx.author.name}!", color=ctx.guild.me.color)
+            rand_link = random.choice(self.images['bonk'])
+            embed.set_image(url=rand_link)
+            await ctx.send(random.choice(["You cannot do that to me!", "Do it to someone else!",
+                                          "Keep dreaming!", 'Fuck off!', 'Naughty kids need to be punished!']),
+                           embed=embed)
+        else:
+            message = ctx.message.content
+            for i in self.aliases_:
+                if i in message:
+                    message = i
+                    break
 
-    # @discord.ext.commands.command(name="bonk")
-    # async def bonk(self, ctx, member: discord.Member):
-    #     embed = discord.Embed(description=f"{ctx.author.name} bonked {member.name}", color=ctx.guild.me.color)
-    #     rand_link = random.choice(self.bonk_images)
-    #     embed.set_image(url=rand_link)
-    #     await ctx.send(embed=embed)
-    #
-    # @discord.ext.commands.command(name="kiss")
-    # async def kiss(self, ctx, member: discord.Member):
-    #     embed = discord.Embed(description=f"{ctx.author.name} kissed {member.name}", color=ctx.guild.me.color)
-    #     rand_link = random.choice(self.kiss_images)
-    #     embed.set_image(url=rand_link)
-    #     await ctx.send(embed=embed)
-    #
-    # @discord.ext.commands.command(name="poke")
-    # async def poke(self, ctx, member: discord.Member):
-    #     embed = discord.Embed(description=f"{ctx.author.name} poked {member.name}!",
-    #                           color=ctx.guild.me.color)
-    #     rand_link = random.choice(self.poke_images)
-    #     embed.set_image(url=rand_link)
-    #     await ctx.send(embed=embed)
+            embed = discord.Embed(title=f"{titles[message]}", color=ctx.guild.me.color)
+            # rand_link = random.choice(self.images[message])
+            # embed.set_image(url=rand_link)
+            await ctx.send(embed=embed)
