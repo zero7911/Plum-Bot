@@ -1,1 +1,1 @@
-worker: python Plum.py
+worker: python plum run.py
