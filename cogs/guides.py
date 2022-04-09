@@ -1,34 +1,24 @@
-import discord
+from discord.ext import commands
 
 
-class Guides(discord.ext.commands.Cog, name='Guides'):
-    def __init__(self, bot):
-        self.bot = bot
-
-    aliases_ = "dili".split(" ")
-
-    @discord.ext.commands.command(name="_guides_", aliases=aliases_)
+class Guides(commands.Cog, name='Guides'):
+    @commands.command(aliases="dili".split())
     async def _guides_(self, ctx):
-        titles = {
-            'b9': f'Basement Floor 9 Guide',
+        # titles = {
+        #     'b9': f'Basement Floor 9 Guide',
+        #
+        #     'dili': f'Dilitherio Super Guide',
+        #
+        #     'duroc': f'Duroc Super Guide',
+        #
+        # }
 
-            'dili': f'Dilitherio Super Guide',
-
-            'duroc': f'Duroc Super Guide',
-
-        }
-
-        message = ctx.message.content
-        for i in self.aliases_:
-            if i in message:
-                message = i
-                break
-
+        message = ctx.invoked_with
         if message == 'dili':
-            with open(f"{message}.txt") as f:
+            with open(f"guides\{message}.txt") as f:
                 guide = f.readlines()
                 guide = ''.join(guide)
-            with open(f"{message}2.txt") as f2:
+            with open(f"guides\{message}2.txt") as f2:
                 guide2 = f2.readlines()
                 guide2 = ''.join(guide2)
             await ctx.send(f'{guide}')

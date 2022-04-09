@@ -6,8 +6,7 @@ from cogs.social import Social
 from cogs.actions import Actions
 from cogs.reactions import Reactions
 from cogs.guides import Guides
-# from cogs.custom_help import CustomHelp
-import cogs.custom_help as ch
+from cogs.custom_help import CustomHelp
 
 
 from os import getenv
@@ -25,18 +24,18 @@ def main():
     intents.members = True
 
     # bot initialize
-    bot = CustomBotClient(command_prefix='p ', intents=intents)
+    bot = CustomBotClient(command_prefix="p ", intents=intents)
 
-    # removin default help command
+    # removing default help command
     bot.remove_command('help')
-    # calling cogs
-    ch.custom_help(bot)
+
+    # adding cogs
     bot.add_cog(Greetings(bot))
     bot.add_cog(Social(bot))
     bot.add_cog(Actions(bot))
     bot.add_cog(Reactions(bot))
     bot.add_cog(Guides(bot))
-    # bot.add_cog(CustomHelp(bot))
+    bot.add_cog(CustomHelp(bot))
     bot.add_cog(CommandErrHandler(bot))
 
     # bot initialized

@@ -1,142 +1,96 @@
 import discord
+from discord.ext import commands
 import random
 
 
-class Actions(discord.ext.commands.Cog, name='Actions'):
-    def __init__(self, bot):
-        self.bot = bot
-
+class Actions(commands.Cog, name='Actions'):
     images = {
-        'bite': [
-            'https://c.tenor.com/xHeSSmvJvQQAAAAC/vampire-kiss.gif',
-            'https://c.tenor.com/roNlxBPyft4AAAAi/kiss-love.gif',
-            'https://c.tenor.com/0uRmrUvyZFEAAAAM/vamp-vampire-bite.gif'
-            'https://c.tenor.com/SCQI234MDZYAAAAM/iove-bite.gif'
-            'https://c.tenor.com/N08gv10rlSEAAAAS/diabolik-lovers.gif'
-        ],
+        'bite': ['https://i.imgur.com/I7X0elG.gif', 'https://i.imgur.com/R4MnNFV.gif',
+                 'https://i.imgur.com/bPwDUHm.gif', 'https://i.imgur.com/PlFkJLs.gif'],
 
-        'bonk': [
-            'https://cdn.discordapp.com/attachments/581509910848864265/889613544553865236/bonk-anime.gif',
-            'https://cdn.discordapp.com/attachments/581509910848864265/889613545023615016/psyduck-bonk.gif'
-        ],
+        'bonk': ['https://imgur.com/fMKi7qt.gif', 'https://imgur.com/KVmzsHN.gif'],
 
-        'cuddle': [
-            'https://data.yuibot.app/reactions/poke/ansiodjas.gif',
-            'https://data.yuibot.app/reactions/poke/jsidoajd.gif'
-        ],
+        'cuddle': ['https://i.imgur.com/M9zsvwY.gif', 'https://i.imgur.com/TgdAOue.gif'],
 
-        'hug': [
-            'https://data.yuibot.app/reactions/poke/ansiodjas.gif',
-            'https://data.yuibot.app/reactions/poke/jsidoajd.gif'
-        ],
+        'hug': ['https://i.imgur.com/zgmiytH.gif', 'https://i.imgur.com/1XBLGY8.gif',
+                'https://i.imgur.com/fY6IC7S.gif'],
 
-        'kill': [
-            'https://imgur.com/jngyAfB.gif'
-        ],
+        'kill': ['https://i.imgur.com/jngyAfB.gif', 'https://i.imgur.com/61J6yKl.gif'],
 
-        'kiss': [
-            'https://cdn.weeb.sh/images/rJeB2aOP-.gif'
-        ],
+        'kiss': ['https://i.imgur.com/TK60yrE.gif', 'https://i.imgur.com/GZDBsQy.gif',
+                 'https://i.imgur.com/yZPvWue.gif', 'https://i.imgur.com/seXxTtE.gif'],
 
-        'lick': [
-            'https://data.yuibot.app/reactions/poke/ansiodjas.gif',
-            'https://data.yuibot.app/reactions/poke/jsidoajd.gif'
-        ],
+        'lick': ['https://i.imgur.com/RsntR8D.gif', 'https://i.imgur.com/HM9batK.gif'],
 
-        'nom': [
-            'https://data.yuibot.app/reactions/poke/ansiodjas.gif',
-            'https://data.yuibot.app/reactions/poke/jsidoajd.gif'
-        ],
+        'pat': ['https://i.imgur.com/u9nW2LJ.gif', 'https://i.imgur.com/3DQpvRJ.gif',
+                'https://i.imgur.com/KF8U2Ns.gif'],
 
-        'pat': [
-            'https://data.yuibot.app/reactions/poke/ansiodjas.gif',
-            'https://data.yuibot.app/reactions/poke/jsidoajd.gif'
-        ],
+        'poke': ['https://i.imgur.com/4SYxNdG.gif', 'https://i.imgur.com/OZGE0hw.gif',
+                 'https://i.imgur.com/AEHLnYT.gif'],
 
-        'poke': [
-            'https://data.yuibot.app/reactions/poke/ansiodjas.gif',
-            'https://data.yuibot.app/reactions/poke/jsidoajd.gif'
+        'punch': ['https://i.imgur.com/vih3fdY.gif'],
 
-        ],
+        'slap': ['https://i.imgur.com/6w9bIGY.gif', 'https://i.imgur.com/VnhDXNH.gif',
+                 'https://i.imgur.com/Kg4U3dB.gif', 'https://i.imgur.com/kyfpHKA.gif'],
 
-        'punch': [
-            'https://data.yuibot.app/reactions/poke/ansiodjas.gif',
-            'https://data.yuibot.app/reactions/poke/jsidoajd.gif'
+        'spank': ['https://i.imgur.com/M4jp80S.gif', 'https://i.imgur.com/lu4BQpY.gif',
+                  'https://i.imgur.com/8Z6Dojf.gif'],
 
-        ],
+        'stare': ['https://i.imgur.com/OFTkCzQ.gif', 'https://i.imgur.com/FuPPIki.gif',
+                  'https://i.imgur.com/lO39jMJ.gif'],
 
-        'slap': [
-            'https://data.yuibot.app/reactions/poke/ansiodjas.gif',
-            'https://data.yuibot.app/reactions/poke/jsidoajd.gif'
-        ],
-
-        'spank': [
-            'https://data.yuibot.app/reactions/poke/ansiodjas.gif',
-            'https://data.yuibot.app/reactions/poke/jsidoajd.gif'
-        ],
-
-        'stare': [
-            'https://data.yuibot.app/reactions/poke/ansiodjas.gif',
-            'https://data.yuibot.app/reactions/poke/jsidoajd.gif'
-        ],
-
-        'tickle': [
-            'https://data.yuibot.app/reactions/poke/ansiodjas.gif',
-            'https://data.yuibot.app/reactions/poke/jsidoajd.gif'
-        ]
+        'tickle': ['https://i.imgur.com/9KSwMw5.gif', 'https://i.imgur.com/gAkIsB4.gif',
+                   'https://i.imgur.com/S6btHFi.gif']
     }
 
-    aliases_ = "bite bonk cuddle hug kill kiss lick nom pat poke punch slap spank stare tickle".split(" ")
-
-    @discord.ext.commands.command(name="_actions_", aliases=aliases_)
+    @commands.command(aliases="bite bonk cuddle hug kill kiss lick pat poke punch slap spank stare tickle".split(" "))
     async def _actions_(self, ctx, member: discord.Member):
         titles = {
-            'bite': f'{ctx.author.name} is biting {member.name}! Hope the teeth are alright!',
+            'bite': f'{ctx.author.display_name} is biting {member.display_name}! Hope the teeth are alright!',
 
-            'bonk': f'{ctx.author.name} bonked {member.name}! Can I do it too?',
+            'bonk': f'{ctx.author.display_name} bonked {member.display_name}! Can I do it too?',
 
-            'cuddle': f'{ctx.author.name} is cuddling with {member.name}! Lets not disturb them',
+            'cuddle': f'{ctx.author.display_name} is cuddling with {member.display_name}! Lets not disturb them',
 
-            'hug': f'{ctx.author.name} hugged {member.name}! I want a hug too',
+            'hug': f'{ctx.author.display_name} hugged {member.display_name}! I want a hug too!',
 
-            'kill': f'{ctx.author.name} killed {member.name}! No Mercy!',
+            'kill': f'{ctx.author.display_name} killed {member.display_name}! No Mercy!',
 
-            'kiss': f'{ctx.author.name} kissed {member.name}! Go get a room, you lovebirds!',
+            'kiss': f'{ctx.author.display_name} kissed {member.display_name}! Go get a room, you lovebirds!',
 
-            'lick': f'{ctx.author.name} licked {member.name}! Make sure to take a bath later',
+            'lick': f'{ctx.author.display_name} licked {member.display_name}! Make sure to take a bath later',
 
-            'nom': f'{ctx.author.name} noms {member.name}! Yummie!',
+            'pat': f'{ctx.author.display_name} pats {member.display_name}! There,there',
 
-            'pat': f'{ctx.author.name} pats {member.name}! There,there',
+            'poke': f'{ctx.author.display_name} wants {member.display_name}\'s attention!',
 
-            'poke': f'{ctx.author.name} wants {member.name}\'s attention!',
+            'punch': f'{ctx.author.display_name} punched {member.display_name}! That must have hurt',
 
-            'punch': f'{ctx.author.name} punched {member.name}! That must have hurt',
+            'slap': f'{ctx.author.display_name} slapped {member.display_name}! You deserved it maybe?',
 
-            'slap': f'{ctx.author.name} slapped {member.name}! You deserved it maybe?',
+            'spank': f'{ctx.author.display_name} spanked {member.display_name}! Naughty',
 
-            'spank': f'{ctx.author.name} spanked {member.name}! Naughty',
+            'stare': f'{ctx.author.display_name} is staring at {member.display_name}! Not in a bad way, right?',
 
-            'stare': f'{ctx.author.name} is staring at {member.name}! Not in a bad way, right?',
-
-            'tickle': f'{ctx.author.name} tickled {member.name}! Seems fun'
+            'tickle': f'{ctx.author.display_name} tickled {member.display_name}! Seems fun'
         }
 
-        if member.name == ctx.guild.me.name:
-            embed = discord.Embed(title=f"{ctx.me.name} bonked {ctx.author.name}!", color=ctx.guild.me.color)
-            rand_link = random.choice(self.images['bonk'])
+        if member.display_name == ctx.guild.me.display_name:
+            rand_link = random.choice(['bonk', 'kill', 'punch', 'spank'])
+            embed = discord.Embed(title=f"{ctx.me.display_name} {rand_link}ed {ctx.author.display_name}!",
+                                  color=ctx.guild.me.color)
+            rand_link = random.choice(self.images[rand_link])
             embed.set_image(url=rand_link)
             await ctx.send(random.choice(["You cannot do that to me!", "Do it to someone else!",
-                                          "Keep dreaming!", 'Fuck off!', 'Naughty kids need to be punished!']),
+                                          "Keep dreaming!", 'Don\'t touch me!', 'Naughty kids need to be punished!']),
                            embed=embed)
+        elif member.display_name == ctx.author.display_name:
+            await ctx.send("Do it to someone else. Baka!")
+        elif (member.id == 605027605539717130) and (ctx.author.id != 760391406837170198):
+            await ctx.send("Stay away from my master!")
         else:
-            message = ctx.message.content
-            for i in self.aliases_:
-                if i in message:
-                    message = i
-                    break
-
+            message = ctx.invoked_with
             embed = discord.Embed(title=f"{titles[message]}", color=ctx.guild.me.color)
-            # rand_link = random.choice(self.images[message])
-            # embed.set_image(url=rand_link)
+            rand_link = random.choice(self.images[message])
+            embed.set_image(url=rand_link)
             await ctx.send(embed=embed)

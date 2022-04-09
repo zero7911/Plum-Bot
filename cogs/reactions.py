@@ -1,114 +1,65 @@
 import discord
+from discord.ext import commands
 import random
 
 
-class Reactions(discord.ext.commands.Cog, name='Reactions'):
-    def __init__(self, bot):
-        self.bot = bot
-
+class Reactions(commands.Cog, name='Reactions'):
     images = {
-        'baka': [
-            'https://c.tenor.com/xHeSSmvJvQQAAAAC/vampire-kiss.gif',
-            'https://c.tenor.com/roNlxBPyft4AAAAi/kiss-love.gif',
-            'https://c.tenor.com/0uRmrUvyZFEAAAAM/vamp-vampire-bite.gif'
-            'https://c.tenor.com/SCQI234MDZYAAAAM/iove-bite.gif'
-            'https://c.tenor.com/N08gv10rlSEAAAAS/diabolik-lovers.gif'
-        ],
+        'baka': ['https://imgur.com/8x792Sx.gif'],
 
-        'blush': [
-            'https://cdn.discordapp.com/attachments/581509910848864265/889613544553865236/bonk-anime.gif',
-            'https://cdn.discordapp.com/attachments/581509910848864265/889613545023615016/psyduck-bonk.gif'
-        ],
+        'blush': ['https://imgur.com/8x792Sx.gif'],
 
-        'cry': [
-            'https://data.yuibot.app/reactions/poke/ansiodjas.gif',
-            'https://data.yuibot.app/reactions/poke/jsidoajd.gif'
-        ],
+        'cry': ['https://imgur.com/8x792Sx.gif'],
 
-        'dance': [
-            'https://data.yuibot.app/reactions/poke/ansiodjas.gif',
-            'https://data.yuibot.app/reactions/poke/jsidoajd.gif'
-        ],
+        'dance': ['https://imgur.com/8x792Sx.gif'],
 
-        'grin': [
-            'https://data.yuibot.app/reactions/poke/ansiodjas.gif',
-            'https://data.yuibot.app/reactions/poke/jsidoajd.gif'
-        ],
+        'grin': ['https://imgur.com/8x792Sx.gif'],
 
-        'lewd': [
-            'https://cdn.weeb.sh/images/rJeB2aOP-.gif'
-        ],
+        'lewd': ['https://imgur.com/8x792Sx.gif'],
 
-        'pout': [
-            'https://data.yuibot.app/reactions/poke/ansiodjas.gif',
-            'https://data.yuibot.app/reactions/poke/jsidoajd.gif'
-        ],
+        'pout': ['https://imgur.com/8x792Sx.gif'],
 
-        'shrug': [
-            'https://data.yuibot.app/reactions/poke/ansiodjas.gif',
-            'https://data.yuibot.app/reactions/poke/jsidoajd.gif'
-        ],
+        'shrug': ['https://imgur.com/8x792Sx.gif'],
 
-        'sleepy': [
-            'https://data.yuibot.app/reactions/poke/ansiodjas.gif',
-            'https://data.yuibot.app/reactions/poke/jsidoajd.gif'
+        'sleepy': ['https://imgur.com/8x792Sx.gif'],
 
-        ],
+        'smug': ['https://imgur.com/8x792Sx.gif'],
 
-        'smug': [
-            'https://data.yuibot.app/reactions/poke/ansiodjas.gif',
-            'https://data.yuibot.app/reactions/poke/jsidoajd.gif'
-        ],
+        'thinking': ['https://imgur.com/8x792Sx.gif'],
 
-        'thinking': [
-            'https://data.yuibot.app/reactions/poke/ansiodjas.gif',
-            'https://data.yuibot.app/reactions/poke/jsidoajd.gif'
-        ],
-
-        'triggered': [
-            'https://data.yuibot.app/reactions/poke/ansiodjas.gif',
-            'https://data.yuibot.app/reactions/poke/jsidoajd.gif'
-        ]
+        'triggered': ['https://imgur.com/8x792Sx.gif']
     }
 
-    aliases_ = "baka blush cry dance grin lewd pout shrug sleepy smug thinking triggered".split(" ")
-
-    @discord.ext.commands.command(name="_reactions_", aliases=aliases_)
+    @commands.command(aliases="baka blush cry dance grin lewd pout shrug sleepy smug thinking triggered".split(" "))
     async def _reactions_(self, ctx):
-        message = ctx.message.content
-        for i in self.aliases_:
-            if i in message:
-                message = i
-                break
-
+        message = ctx.invoked_with
         titles = {
-            'baka': f'{ctx.author.name} is saying {message}',
+            'baka': f'{ctx.author.display_name} is saying {message}',
 
-            'blush': f'{ctx.author.name} is {message}ing',
+            'blush': f'{ctx.author.display_name} is {message}ing',
 
-            'cry': f'{ctx.author.name} is {message}ing',
+            'cry': f'{ctx.author.display_name} is {message}ing',
 
-            'dance': f'{ctx.author.name} is doing {message}',
+            'dance': f'{ctx.author.display_name} is dancing',
 
-            'grin': f'{ctx.author.name} is {message}ning',
+            'grin': f'{ctx.author.display_name} is {message}ning',
 
-            'lewd': f'{ctx.author.name} thinks that this is too {message}',
+            'lewd': f'{ctx.author.display_name} thinks that this is too {message}',
 
-            'pout': f'{ctx.author.name} is {message}ing',
+            'pout': f'{ctx.author.display_name} is {message}ing',
 
-            'shrug': f'{ctx.author.name} {message}ged',
+            'shrug': f'{ctx.author.display_name} {message}ged',
 
-            'sleepy': f'{ctx.author.name} is getting {message}',
+            'sleepy': f'{ctx.author.display_name} is getting {message}',
 
-            'smug': f'{ctx.author.name} is acting {message}',
+            'smug': f'{ctx.author.display_name} is acting {message}',
 
-            'thinking': f'{ctx.author.name} is {message} something',
+            'thinking': f'{ctx.author.display_name} is {message} something',
 
-            'triggered': f'{ctx.author.name} is {message}'
+            'triggered': f'{ctx.author.display_name} is {message}'
         }
-
         embed = discord.Embed(title=f"{titles[message]}",
                               color=ctx.guild.me.color)
         rand_link = random.choice(self.images[message])
-        # embed.set_image(url=rand_link)
+        embed.set_image(url=rand_link)
         await ctx.send(embed=embed)

@@ -22,3 +22,4 @@ Author: Zero
         :small_red_triangle_down: Buffs + All soil attacks (AoE can be used)
      :diamond_shape_with_a_dot_inside: Yome Initiator - *Buffer and Debuffer*
         :small_red_triangle_down: Assign,  CRT Discharge, Optimize, Quick Step, Smog Ball, Sprinkler
+
