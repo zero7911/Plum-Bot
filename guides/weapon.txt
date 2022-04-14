@@ -1,0 +1,27 @@
+:large_orange_diamond: Author
+     :small_red_triangle_down: Zero
+
+**Weapon Builds**
+:large_orange_diamond: **Supports**
+     :diamond_shape_with_a_dot_inside: Applicable Jobs: Divine Knight, Shaman, Initiator, Saint, Bard
+        :small_red_triangle_down: 2 Shields of each element (Nova for Ousia)
+        :small_red_triangle_down: Main Weapon: AW and Shield
+        :small_red_triangle_down: Sub Weapons: Any Element Shields
+        :small_red_triangle_down: See Akashic Weapons Guide for build
+        :small_red_triangle_down: Slots: 3 Blue 1 Green 1 Yellow OR 3 Blue 2 Green
+
+:large_orange_diamond: **Combo DPS**
+     :diamond_shape_with_a_dot_inside: Applicable Jobs: Kaiser, Destroyer, Chaos Xcaliber
+        :small_red_triangle_down: Make 2 Weapons of each element
+        :small_red_triangle_down: Main Weapon: Any Element
+        :small_red_triangle_down: Sub Weapons: Any Element + AW
+        :small_red_triangle_down: See Akashic Weapons Guide for build
+        :small_red_triangle_down: Slots: 2 Blue 2 Green 1 Yellow OR 3 Blue 2 Green OR 3 Green 2 Blue OR 2 Green 1 Blue 2 Yellow
+
+:large_orange_diamond: **Elemental DPS**
+     :diamond_shape_with_a_dot_inside: Applicable Jobs: Zodiac, Chaos Xcaliber
+        :small_red_triangle_down: Make many weapons for each element
+        :small_red_triangle_down: Main Weapon: Boss Weakness Element
+        :small_red_triangle_down: Sub Weapons: Boss Weakness Element + AW
+        :small_red_triangle_down: See Akashic Weapons Guide for build
+        :small_red_triangle_down: Slots: 2 Blue 2 Green 1 Yellow OR 3 Blue 2 Green OR 3 Green 2 Blue OR 2 Green 1 Blue 2 Yellow

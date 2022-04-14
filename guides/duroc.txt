@@ -1,0 +1,53 @@
+:large_orange_diamond: **Author**
+     :small_red_triangle_down: Zero
+
+**Duroc Super Guide**
+:large_orange_diamond: **Boss**
+     :small_red_triangle_down: Duroc (Soil)             :small_red_triangle_down: Duroc A (Soil)             :small_red_triangle_down: Duroc B (Soil)
+
+:large_orange_diamond: **Stats**
+     :diamond_shape_with_a_dot_inside: Tank:
+        :small_red_triangle_down: Hp= 20k+   Def= 8k+    Soil Def= 400+
+     :diamond_shape_with_a_dot_inside: DPS:
+        :small_red_triangle_down: Atk/Matk = 50k+    Wind Atk = 700+    Damage Limit = 270k+
+     :diamond_shape_with_a_dot_inside: Everyone:
+        :small_red_triangle_down: Hp= 15k+    Def= 4k+    Soil Def= 400+
+
+:large_orange_diamond: **Skill Decks and Required Roles**
+     :diamond_shape_with_a_dot_inside: Divine Knight - *Tank*
+        :small_red_triangle_down: Defense Stance, Protection, Torus Guard, Quick Step, Thunder Stone, Vanguard/Advantage
+     :diamond_shape_with_a_dot_inside: Shaman - *Debuffer*
+        :small_red_triangle_down: Thorn of Misery, Dark Fog, Binding Spell, Spirit Breath, Road to Silence, Dazzling Vortex
+     :diamond_shape_with_a_dot_inside: Saint - *Healer and Debuffer*
+        :small_red_triangle_down: Psyche, Discourage, Wall, Veil, Quick Step, Testament
+     :diamond_shape_with_a_dot_inside: Initiator - *PDPS and Debuffer*
+        :small_red_triangle_down:Assign, CRT Discharge, Rafale, 2 Wind Attacks,  Smog Ball
+     :diamond_shape_with_a_dot_inside: PDPS - *Physical Damage Dealers*
+        :small_red_triangle_down: Buffs + All wind attacks.
+     :diamond_shape_with_a_dot_inside: MDPS - *Magical Damage Dealers*
+        :small_red_triangle_down: Buffs + All wind attacks.
+     :diamond_shape_with_a_dot_inside: Yome Initiator - *Buffer and Debuffer*
+        :small_red_triangle_down:Assign,  CRT Discharge, Optimize, Quick Step, Smog Ball, Sprinkler
+
+:large_orange_diamond: **Things to Note**
+        :small_red_triangle_down: Duroc uses Guard after fixed point of his Hp
+        :small_red_triangle_down: His attacks become stronger after each Guard
+        :small_red_triangle_down: Tank is stunned in every cycle
+        :small_red_triangle_down: Duroc A must not be hit with Physical Damage
+        :small_red_triangle_down: Duroc B must not be hit with Magical Damage
+
+:large_orange_diamond: **Pattern**
+     :diamond_shape_with_a_dot_inside: Common Pattern
+        :small_red_triangle_down: Punch >> Skull Splitter(Bonk) >> Body Press(Jump) >> [One of the below]
+     :diamond_shape_with_a_dot_inside: Pattern 1
+        :small_red_triangle_down: Ground Breaker (Single)
+     :diamond_shape_with_a_dot_inside: Pattern 2
+        :small_red_triangle_down: Ground Crusher (AoE)
+     :diamond_shape_with_a_dot_inside: Pattern 3
+        :small_red_triangle_down: Warm up >> Punch >> Punch >> Ork Rush
+
+:large_orange_diamond: **Skills Usage**
+        :small_red_triangle_down: Def Stance/Torus Guard before Skull Splitter [DK]
+        :small_red_triangle_down: Dark Fog and Discourage during Body Press [Shaman & Saint]
+        :small_red_triangle_down: Smog Ball and Binding Spell/Thorn of Misery after Warm up [Initiator & Shaman]
+        :small_red_triangle_down: Def Stance/Torus Guard after Warm up [DK]

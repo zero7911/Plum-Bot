@@ -9,8 +9,8 @@ class CustomHelp(commands.Cog):
             await ctx.send('I do not know that command?!')
         else:
             em = discord.Embed(title="List of commands",
-                               description="Here is the list of commands!\nFor more info on a specific command,"
-                                           " use **p help <command>**",
+                               description=f"Here is the list of commands!\nFor more info on a specific command,"
+                                           f" use **{ctx.prefix}help <command>**",
                                color=ctx.guild.me.color)
             em.add_field(name="Actions",
                          value="`bite` `bonk` `cuddle` `hug` `kill` `kiss` `lick` `pat` `poke` `punch` `slap` "
@@ -21,7 +21,7 @@ class CustomHelp(commands.Cog):
                                " `triggered`",
                          inline=False)
             em.add_field(name="Social", value="`profile` `avatar`", inline=False)
-            # em.add_field(name="Fun", value="8ball reverse")
+            em.add_field(name="AS Guides", value="`basement` `boss` `items` `tips`")
             await ctx.send(embed=em)
 
     '''
@@ -31,14 +31,14 @@ class CustomHelp(commands.Cog):
     async def profile(self, ctx):
         em = discord.Embed(title="profile", description="Shows the profile of the mentioned user",
                            color=ctx.guild.me.color)
-        em.add_field(name="How To Use", value=f"{ctx.prefix} profile <member>")
+        em.add_field(name="How To Use", value=f"{ctx.prefix}profile <member>")
         await ctx.send(embed=em)
 
     @help.command()
     async def avatar(self, ctx):
         em = discord.Embed(title="avatar", description="Shows the avatar of the mentioned user",
                            color=ctx.guild.me.color)
-        em.add_field(name="How To Use", value=f"{ctx.prefix} avatar <member>")
+        em.add_field(name="How To Use", value=f"{ctx.prefix}avatar <member>")
         await ctx.send(embed=em)
 
     '''
@@ -47,7 +47,6 @@ class CustomHelp(commands.Cog):
     @help.command(aliases="bite bonk cuddle hug kill kiss lick pat poke punch slap spank stare tickle".split(" "))
     async def _actions_(self, ctx):
         message = ctx.invoked_with
-        print(message)
         titles = {
             'bite': f'Bites the mentioned user',
 
@@ -80,7 +79,7 @@ class CustomHelp(commands.Cog):
 
         em = discord.Embed(title=message.capitalize(), description=titles[message],
                            color=ctx.guild.me.color)
-        em.add_field(name="How To Use", value=f"{ctx.prefix} {message} <member>")
+        em.add_field(name="How To Use", value=f"{ctx.prefix}{message} <member>")
         await ctx.send(embed=em)
 
     '''
@@ -117,5 +116,46 @@ class CustomHelp(commands.Cog):
         message = ctx.invoked_with
         em = discord.Embed(title=message.capitalize(), description=titles[message],
                            color=ctx.guild.me.color)
-        em.add_field(name="How To Use", value=f"{ctx.prefix} {message}")
+        em.add_field(name="How To Use", value=f"{ctx.prefix}{message}")
+        await ctx.send(embed=em)
+
+        '''
+            AS Guides Help Section
+        '''
+
+    @help.command(aliases="basement boss items tips".split(" "))
+    async def _guides_(self, ctx):
+        titles = {
+            'basement': f'Shows the basement floor guide',
+
+            'boss': f'Shows the boss guide',
+
+            'items': f'Shows information of the item',
+
+            'tips': f'Shows tips about the various game stuff',
+        }
+
+        message = ctx.invoked_with
+        em = discord.Embed(title=message.capitalize(), description=titles[message],
+                           color=ctx.guild.me.color)
+        if message == 'basement':
+            em.add_field(name="Commands List",
+                         value="`b1` `b2` `b3` `b4` `b5` `b6` `b7` `b8` `b9`",
+                         inline=False)
+            em.add_field(name="How To Use", value=f"{ctx.prefix}guide <command>")
+        elif message == 'boss':
+            em.add_field(name="Commands List",
+                         value="`cali` `dili` `duroc` `ocy` `faf` `drauga` `dasha`",
+                         inline=False)
+            em.add_field(name="How To Use", value=f"{ctx.prefix}guide <command>")
+        elif message == 'items':
+            em.add_field(name="Commands List",
+                         value="`<Item Name>`",
+                         inline=False)
+            em.add_field(name="How To Use", value=f"{ctx.prefix}find <Item Name>")
+        elif message == 'tips':
+            em.add_field(name="Commands List",
+                         value="`armor` `aw` `newbie` `weapon`",
+                         inline=False)
+            em.add_field(name="How To Use", value=f"{ctx.prefix}guide <command>")
         await ctx.send(embed=em)

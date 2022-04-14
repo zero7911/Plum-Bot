@@ -46,33 +46,33 @@ class Actions(commands.Cog, name='Actions'):
     @commands.command(aliases="bite bonk cuddle hug kill kiss lick pat poke punch slap spank stare tickle".split(" "))
     async def _actions_(self, ctx, member: discord.Member):
         titles = {
-            'bite': f'{ctx.author.display_name} is biting {member.display_name}! Hope the teeth are alright!',
+            'bite': f'{ctx.author.display_name} is biting {member.display_name}!',
 
-            'bonk': f'{ctx.author.display_name} bonked {member.display_name}! Can I do it too?',
+            'bonk': f'{ctx.author.display_name} bonked {member.display_name}!',
 
-            'cuddle': f'{ctx.author.display_name} is cuddling with {member.display_name}! Lets not disturb them',
+            'cuddle': f'{ctx.author.display_name} is cuddling with {member.display_name}!',
 
-            'hug': f'{ctx.author.display_name} hugged {member.display_name}! I want a hug too!',
+            'hug': f'{ctx.author.display_name} hugged {member.display_name}!',
 
-            'kill': f'{ctx.author.display_name} killed {member.display_name}! No Mercy!',
+            'kill': f'{ctx.author.display_name} killed {member.display_name}!',
 
-            'kiss': f'{ctx.author.display_name} kissed {member.display_name}! Go get a room, you lovebirds!',
+            'kiss': f'{ctx.author.display_name} kissed {member.display_name}!',
 
-            'lick': f'{ctx.author.display_name} licked {member.display_name}! Make sure to take a bath later',
+            'lick': f'{ctx.author.display_name} licked {member.display_name}!',
 
-            'pat': f'{ctx.author.display_name} pats {member.display_name}! There,there',
+            'pat': f'{ctx.author.display_name} pats {member.display_name}!',
 
             'poke': f'{ctx.author.display_name} wants {member.display_name}\'s attention!',
 
-            'punch': f'{ctx.author.display_name} punched {member.display_name}! That must have hurt',
+            'punch': f'{ctx.author.display_name} punched {member.display_name}!',
 
-            'slap': f'{ctx.author.display_name} slapped {member.display_name}! You deserved it maybe?',
+            'slap': f'{ctx.author.display_name} slapped {member.display_name}!',
 
-            'spank': f'{ctx.author.display_name} spanked {member.display_name}! Naughty',
+            'spank': f'{ctx.author.display_name} spanked {member.display_name}!',
 
-            'stare': f'{ctx.author.display_name} is staring at {member.display_name}! Not in a bad way, right?',
+            'stare': f'{ctx.author.display_name} is staring at {member.display_name}!',
 
-            'tickle': f'{ctx.author.display_name} tickled {member.display_name}! Seems fun'
+            'tickle': f'{ctx.author.display_name} tickled {member.display_name}!'
         }
 
         if member.display_name == ctx.guild.me.display_name:
@@ -87,7 +87,7 @@ class Actions(commands.Cog, name='Actions'):
         elif member.display_name == ctx.author.display_name:
             await ctx.send("Do it to someone else. Baka!")
         elif (member.id == 605027605539717130) and (ctx.author.id != 760391406837170198):
-            await ctx.send("Stay away from my master!")
+            await ctx.send("Stay away from my boss!")
         else:
             message = ctx.invoked_with
             embed = discord.Embed(title=f"{titles[message]}", color=ctx.guild.me.color)

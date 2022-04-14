@@ -1,0 +1,27 @@
+:large_orange_diamond: **Author**
+     :small_red_triangle_down: Zero
+
+**Armor Builds**
+:large_orange_diamond: **Supports**
+     :diamond_shape_with_a_dot_inside: Applicable Jobs: Divine Knight, Shaman, Initiator, Saint, Bard
+        :small_red_triangle_down: Ability 1st Choice: Def & Mdef
+        :small_red_triangle_down: Suggested Armors: Sacred Knight
+        :small_red_triangle_down: Ability 2nd Choice: Element Def OR Resilience(Saint Only)
+        :small_red_triangle_down: Suggested Armors: Urban Elegance
+        :small_red_triangle_down: Slots: Blue[Anything except red ok too]
+
+:large_orange_diamond: **Combo DPS**
+     :diamond_shape_with_a_dot_inside: Applicable Jobs: Kaiser, Destroyer, Chaos Xcaliber, Nirvana
+        :small_red_triangle_down: Ability 1st Choice: Damage Limit
+        :small_red_triangle_down: Suggested Armors: Forbidden Beast
+        :small_red_triangle_down: Ability 2nd Choice: Atk/Matk OR Damage UP
+        :small_red_triangle_down: Suggested Armors: Royal Knight(Atk), Wizard(Matk), Ange Fleur(DF) etc.
+        :small_red_triangle_down: Slots: Green[Anything except red ok too]
+
+:large_orange_diamond: **Elemental DPS**
+     :diamond_shape_with_a_dot_inside: Applicable Jobs: Zodiac, Chaos Xcaliber
+        :small_red_triangle_down: Ability 1st Choice: Damage Limit
+        :small_red_triangle_down: Suggested Armors: Forbidden Beast
+        :small_red_triangle_down: Ability 2nd Choice: Element Atk OR Extra Damage
+        :small_red_triangle_down: Suggested Armors: Forgot Names
+        :small_red_triangle_down: Slots: Green[Anything except red ok too]

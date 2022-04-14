@@ -1,0 +1,31 @@
+:large_orange_diamond: **Author**
+     :small_red_triangle_down: Zero
+
+**Akashic Weapon Builds**
+:large_orange_diamond: **Supports**
+     :diamond_shape_with_a_dot_inside: Applicable Jobs: Divine Knight, Shaman, Initiator
+        :small_red_triangle_down: Hp
+        :small_red_triangle_down: Def & Mdef
+        :small_red_triangle_down: Ele Resist
+Tips: Get all Group C buffs first. Get high Def & Mdef then switch other 2 stats to Group B to get Ele Resist. Then get Hp.
+
+:large_orange_diamond: **Healer**
+     :diamond_shape_with_a_dot_inside: Applicable Jobs: Saint
+        :small_red_triangle_down: Resilience
+        :small_red_triangle_down: Def & Mdef
+        :small_red_triangle_down: Hp OR Ele Resist
+Tips: Get all Group C buffs first. Get high Def & Mdef and Resilience then switch Damage Factor to Hp or Ele Resist.
+
+:large_orange_diamond: **Combo DPS**
+     :diamond_shape_with_a_dot_inside: Applicable Jobs: Kaiser, Destroyer, Chaos Xcaliber, Nirvana
+        :small_red_triangle_down: Damage Factor
+        :small_red_triangle_down: Def & Mdef OR Ele Resist
+        :small_red_triangle_down: Crit Effect OR Ele Resist OR Hp OR Atk & Matk
+Tips: Get all Group C buffs first. Get high Damage Factor and Def/Mdef(if u want) then switch Resilience and Def & Mdef(if not taking it) to Crit Effect, Ele Resist, Hp or Atk & Matk.
+
+:large_orange_diamond: **Elemental DPS**
+     :diamond_shape_with_a_dot_inside: Applicable Jobs: Zodiac, Chaos Xcaliber
+        :small_red_triangle_down: Damage Factor
+        :small_red_triangle_down: Def & Mdef OR Ele Resist
+        :small_red_triangle_down: Ele Atk
+Tips: Get all Group C buffs first. Get high Damage Factor and Def/Mdef(if u want) then switch Resilience and Def & Mdef(if not taking it) to Ele Atk and Ele Resist(If not taking Def & Mdef)

@@ -1,13 +1,17 @@
-Author: Zero
-**Dilithero Adv+ Guide**
-:large_orange_diamond: **Boss Name**
+:large_orange_diamond: **Author**
+     :small_red_triangle_down: Zero
+
+**Dilithero Super Guide**
+:large_orange_diamond: **Boss**
      :small_red_triangle_down: Dilithero (Water)             :small_red_triangle_down: Falma (Water)             :small_red_triangle_down: Egg (None)
 
 :large_orange_diamond: **Stats**
      :diamond_shape_with_a_dot_inside: Tank:
-        :small_red_triangle_down: Hp= 20k+   Def= 8k+    Water Def= 500+
+        :small_red_triangle_down: Hp = 20k+   Def = 8k+    Water Def = 500+
+     :diamond_shape_with_a_dot_inside: DPS:
+        :small_red_triangle_down: Atk/Matk = 50k+    Soil Atk = 700+    Damage Limit = 270k+
      :diamond_shape_with_a_dot_inside: Everyone:
-        :small_red_triangle_down: Hp= 15k+    Def= 4k+    Water Def= 400+
+        :small_red_triangle_down: Hp = 15k+    Def = 4k+    Water Def = 400+
 
 :large_orange_diamond: **Skill Decks and Required Roles**
      :diamond_shape_with_a_dot_inside: Divine Knight - *Tank*
@@ -23,3 +27,18 @@ Author: Zero
      :diamond_shape_with_a_dot_inside: Yome Initiator - *Buffer and Debuffer*
         :small_red_triangle_down: Assign,  CRT Discharge, Optimize, Quick Step, Smog Ball, Sprinkler
 
+:large_orange_diamond: **Things to Note**
+        :small_red_triangle_down: DO NOT DEBUFF THE EGG EXCEPT SPECIFIC MOMENT IN THE BATTLE
+        :small_red_triangle_down: Egg's Hp decrease by 400k each time Falma is spawned
+        :small_red_triangle_down: Each debuff casted on the Egg decrease its Hp by 1.5m
+        :small_red_triangle_down: Debuff resets the damage of Breath of Resentment (Necessary every 5th Falma)
+        :small_red_triangle_down: If Egg's Hp reach 0 then Party will die
+        :small_red_triangle_down: Falma must be killed fast for lower reverse damage
+
+:large_orange_diamond: **Pattern**
+     :diamond_shape_with_a_dot_inside: Common Pattern
+        :small_red_triangle_down: Headbutt >> Venom >> Bite >> Water Torrent(AoE) or Rapid Stream(Single) >> Breath of Resentment
+
+:large_orange_diamond: **Skills Usage**
+        :small_red_triangle_down: Aegis during Bite [DK]
+        :small_red_triangle_down: Dark Fog, Smog Ball and Radiance Cross during Bite [Shaman, Initiator & Saint]
