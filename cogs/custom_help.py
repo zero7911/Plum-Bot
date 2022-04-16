@@ -17,8 +17,8 @@ class CustomHelp(commands.Cog):
                                "`spank` `stare` `tickle`",
                          inline=False)
             em.add_field(name="Reactions",
-                         value="`baka` `blush` `cry` `dance` `grin` `lewd` `pout` `shrug` `sleepy` `smug` `thinking`"
-                               " `triggered`",
+                         value="`angry` `baka` `blush` `cry` `dance` `grin` `lewd` `pout` `shrug` `sleepy` `smug` "
+                               "`thinking` `triggered`",
                          inline=False)
             em.add_field(name="Social", value="`profile` `avatar`", inline=False)
             em.add_field(name="AS Guides", value="`basement` `boss` `items` `tips`")
@@ -85,9 +85,11 @@ class CustomHelp(commands.Cog):
     '''
             Reaction Commands Help Section
     '''
-    @help.command(aliases="baka blush cry dance grin lewd pout shrug sleepy smug thinking triggered".split(" "))
+    @help.command(aliases="angry baka blush cry dance grin lewd pout shrug sleepy smug thinking triggered".split(" "))
     async def _reactions_(self, ctx):
         titles = {
+            'angry': f'User gets angry',
+
             'baka': f'User says baka',
 
             'blush': f'User blushes',

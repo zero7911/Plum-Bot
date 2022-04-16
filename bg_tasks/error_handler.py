@@ -1,7 +1,7 @@
 from discord.ext import commands
 
 
-class CommandErrHandler(commands.Cog):
+class ErrorHandler(commands.Cog):
 
     def __init__(self, bot):
         self.bot = bot

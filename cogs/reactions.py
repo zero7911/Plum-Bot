@@ -5,35 +5,40 @@ import random
 
 class Reactions(commands.Cog, name='Reactions'):
     images = {
-        'baka': ['https://imgur.com/8x792Sx.gif'],
+        'angry': ['https://i.imgur.com/C6JrEC2.gif'],
 
-        'blush': ['https://imgur.com/8x792Sx.gif'],
+        'baka': ['https://i.imgur.com/dE1JCK4.gif'],
 
-        'cry': ['https://imgur.com/8x792Sx.gif'],
+        'blush': ['https://i.imgur.com/wetBY43.gif'],
 
-        'dance': ['https://imgur.com/8x792Sx.gif'],
+        'cry': ['https://i.imgur.com/kWXw2Cs.gif'],
 
-        'grin': ['https://imgur.com/8x792Sx.gif'],
+        'dance': ['https://i.imgur.com/HZ078eu.gif'],
 
-        'lewd': ['https://imgur.com/8x792Sx.gif'],
+        'grin': ['https://i.imgur.com/OLsDzl3.gif'],
 
-        'pout': ['https://imgur.com/8x792Sx.gif'],
+        'lewd': ['https://i.imgur.com/MJmRcKg.gif'],
 
-        'shrug': ['https://imgur.com/8x792Sx.gif'],
+        'pout': ['https://i.imgur.com/jFJ2VDs.gif'],
 
-        'sleepy': ['https://imgur.com/8x792Sx.gif'],
+        'shrug': ['https://i.imgur.com/Y1HyFeV.gif'],
 
-        'smug': ['https://imgur.com/8x792Sx.gif'],
+        'sleepy': ['https://i.imgur.com/VtfBVA1.gif'],
 
-        'thinking': ['https://imgur.com/8x792Sx.gif'],
+        'smug': ['https://i.imgur.com/4mQnZhf.gif'],
 
-        'triggered': ['https://imgur.com/8x792Sx.gif']
+        'thinking': ['https://i.imgur.com/30eA2fU.gif'],
+
+        'triggered': ['https://i.imgur.com/tB5KqeC.gif']
     }
 
-    @commands.command(aliases="baka blush cry dance grin lewd pout shrug sleepy smug thinking triggered".split(" "))
+    @commands.command(aliases="angry baka blush cry dance grin lewd pout shrug sleepy smug thinking "
+                              "triggered".split(" "))
     async def _reactions_(self, ctx):
         message = ctx.invoked_with
         titles = {
+            'angry': f'{ctx.author.display_name} is getting {message}',
+
             'baka': f'{ctx.author.display_name} is saying {message}',
 
             'blush': f'{ctx.author.display_name} is {message}ing',
