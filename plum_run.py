@@ -26,7 +26,7 @@ def main():
     intents.members = True
 
     # bot initialize
-    bot = commands.Bot(command_prefix="p", intents=intents)
+    bot = commands.Bot(command_prefix="p ", intents=intents)
 
     # removing default help command
     bot.remove_command('help')
