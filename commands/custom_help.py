@@ -3,6 +3,9 @@ from discord.ext import commands
 
 
 class CustomHelp(commands.Cog):
+    def __init__(self, bot):
+        self.bot = bot
+
     @commands.group(invoke_without_command=True)
     async def help(self, ctx, x=None):
         if x is not None:
@@ -10,18 +13,27 @@ class CustomHelp(commands.Cog):
         else:
             em = discord.Embed(title="List of commands",
                                description=f"Here is the list of commands!\nFor more info on a specific command,"
-                                           f" use **{ctx.prefix}help <command>**",
+                                           f" use **{ctx.prefix}help <command name>**",
                                color=ctx.guild.me.color)
-            em.add_field(name="Actions",
+            em.add_field(name="Actions <Category>",
                          value="`bite` `bonk` `cuddle` `hug` `kill` `kiss` `lick` `pat` `poke` `punch` `slap` "
                                "`spank` `stare` `tickle`",
                          inline=False)
-            em.add_field(name="Reactions",
+            em.add_field(name="Reactions <Category>",
                          value="`angry` `baka` `blush` `cry` `dance` `grin` `lewd` `pout` `shrug` `sleepy` `smug` "
                                "`thinking` `triggered`",
                          inline=False)
-            em.add_field(name="Social", value="`profile` `avatar`", inline=False)
-            em.add_field(name="AS Guides", value="`basement` `boss` `items` `tips`")
+            em.add_field(name="Social <Category>", value="`profile` `avatar`", inline=False)
+            em.add_field(name="AS Guides <Category>",
+                         value="**basement <Sub Category>**\n"
+                               "`b1` `b2` `b3` `b4` `b5` `b6` `b7` `b8` `b9`\n"
+                               "**boss <Sub Category>**\n"
+                               "`cali` `dasha` `dili` `drauga` `duroc` `faf` `ocy`\n"
+                               "**items <Sub Category>**\n"
+                               "`<Item Name>`\n"
+                               "**tips <Sub Category>**\n"
+                               "`armor` `aw` `newbie` `weapon`\n",
+                         inline=False)
             await ctx.send(embed=em)
 
     '''
@@ -161,3 +173,7 @@ class CustomHelp(commands.Cog):
                          inline=False)
             em.add_field(name="How To Use", value=f"{ctx.prefix}guide <command>")
         await ctx.send(embed=em)
+
+
+def setup(bot):
+    bot.add_cog(CustomHelp(bot))

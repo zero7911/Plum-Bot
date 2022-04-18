@@ -4,6 +4,9 @@ import random
 
 
 class Reactions(commands.Cog, name='Reactions'):
+    def __init__(self, bot):
+        self.bot = bot
+
     images = {
         'angry': ['https://i.imgur.com/C6JrEC2.gif'],
 
@@ -68,3 +71,7 @@ class Reactions(commands.Cog, name='Reactions'):
         rand_link = random.choice(self.images[message])
         embed.set_image(url=rand_link)
         await ctx.send(embed=embed)
+
+
+def setup(bot):
+    bot.add_cog(Reactions(bot))

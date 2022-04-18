@@ -4,6 +4,9 @@ import random
 
 
 class Actions(commands.Cog, name='Actions'):
+    def __init__(self, bot):
+        self.bot = bot
+
     images = {
         'bite': ['https://i.imgur.com/I7X0elG.gif', 'https://i.imgur.com/R4MnNFV.gif',
                  'https://i.imgur.com/bPwDUHm.gif', 'https://i.imgur.com/PlFkJLs.gif'],
@@ -94,3 +97,7 @@ class Actions(commands.Cog, name='Actions'):
             rand_link = random.choice(self.images[message])
             embed.set_image(url=rand_link)
             await ctx.send(embed=embed)
+
+
+def setup(bot):
+    bot.add_cog(Actions(bot))

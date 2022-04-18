@@ -1,12 +1,14 @@
 import discord
-from bg_tasks.events import Events
-from bg_tasks.greetings import Greetings
-from bg_tasks.error_handler import ErrorHandler
-from cogs.social import Social
-from cogs.actions import Actions
-from cogs.reactions import Reactions
-from cogs.guides import Guides
-from cogs.custom_help import CustomHelp
+from discord.ext import commands
+import os
+# from bg_tasks.events import Events
+# from bg_tasks.greetings import Greetings
+# from bg_tasks.error_handler import ErrorHandler
+# from commands.social import Social
+# from commands.actions import Actions
+# from commands.reactions import Reactions
+# from commands.guides import Guides
+# from commands.custom_help import CustomHelp
 
 
 from os import getenv
@@ -24,19 +26,15 @@ def main():
     intents.members = True
 
     # bot initialize
-    bot = Events(command_prefix="p ", intents=intents)
+    bot = commands.Bot(command_prefix="p", intents=intents)
 
     # removing default help command
     bot.remove_command('help')
 
-    # adding cogs
-    bot.add_cog(Greetings(bot))
-    bot.add_cog(Social(bot))
-    bot.add_cog(Actions(bot))
-    bot.add_cog(Reactions(bot))
-    bot.add_cog(Guides(bot))
-    bot.add_cog(CustomHelp(bot))
-    bot.add_cog(ErrorHandler(bot))
+    for i in ['commands', 'bg_tasks', 'utility']:
+        for file in os.listdir(i):
+            if file.endswith('.py'):
+                bot.load_extension(f'{i}.{file[:-3]}')
 
     # bot initialized
     bot.run(token)

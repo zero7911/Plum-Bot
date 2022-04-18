@@ -2,7 +2,6 @@ from discord.ext import commands
 
 
 class ErrorHandler(commands.Cog):
-
     def __init__(self, bot):
         self.bot = bot
 
@@ -18,3 +17,7 @@ class ErrorHandler(commands.Cog):
         """
         if isinstance(error, commands.CommandNotFound):
             await ctx.send('I do not know that command?!')
+
+
+def setup(bot):
+    bot.add_cog(ErrorHandler(bot))
